@@ -1,1 +1,7 @@
-<button type="button" class="btn btn-primary">Bootstrap Test</button>
+<gridster [options]="options" class="dashboard-gridster">
+    <gridster-item [item]="item" *ngFor="let item of dashboard">
+    This is the item content!
+    </gridster-item>
+</gridster>
+
+
