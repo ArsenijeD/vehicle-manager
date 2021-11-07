@@ -1,4 +1,4 @@
-<h1> How to run application on loccal environment: </h1>
+<h1> How to run application on local environment: </h1>
 
 <h2> Prerequisites: </h2>
 
