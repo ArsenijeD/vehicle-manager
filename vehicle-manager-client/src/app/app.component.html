@@ -1,7 +1,39 @@
-<gridster [options]="options" class="dashboard-gridster">
-    <gridster-item [item]="item" *ngFor="let item of dashboard">
-    This is the item content!
+<gridster [options]="options" class="dashboard-gridster m-0">
+    <gridster-item [item]="dashboard[0]">
+        <div class="row d-flex justify-content-center align-items-center h-100 my-auto">
+            <ngx-gauge 
+                [value]="+leftEnginePower.toFixed(2)"
+                [label]="leftEngineLabel"
+                [append]="'/255'"
+                [thick]=15
+                [min]=0
+                [max]=255
+                [size]=320
+                cap="round"
+                foregroundColor="#0000ff"
+                backgroundColor="#808080">
+            </ngx-gauge>
+        </div>
+    </gridster-item>
+    <gridster-item [item]="dashboard[1]">
+        <div class="row d-flex justify-content-center align-items-center h-100 my-auto">
+            <ngx-gauge 
+                [value]="+rightEnginePower.toFixed(2)"
+                [label]="rightEngineLabel"
+                [append]="'/255'"
+                [thick]=15
+                [min]=0
+                [max]=255
+                [size]=320
+                cap="round"
+                foregroundColor="#0000ff"
+                backgroundColor="#808080">
+            </ngx-gauge>
+        </div>
     </gridster-item>
 </gridster>
-
-
+<div class="container noselect">
+    <div class="zone">
+        <ngx-joystick (move)="onMoveEngines($event)" (end)="onStopEngines()" [options]="joystickOptions"></ngx-joystick>
+    </div>
+</div>
